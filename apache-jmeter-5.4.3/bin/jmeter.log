@@ -1,0 +1,383 @@
+2023-11-16 14:24:22,263 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2023-11-16 14:24:22,286 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2023-11-16 14:24:22,287 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: Version 5.4.3
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: java.version=1.8.0_341
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: os.name=Mac OS X
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: os.arch=x86_64
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: os.version=13.5.2
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: file.encoding=UTF-8
+2023-11-16 14:24:22,304 INFO o.a.j.JMeter: java.awt.headless=null
+2023-11-16 14:24:22,305 INFO o.a.j.JMeter: Max memory     =16464216064
+2023-11-16 14:24:22,305 INFO o.a.j.JMeter: Available Processors =8
+2023-11-16 14:24:22,310 INFO o.a.j.JMeter: Default Locale=English (EN)
+2023-11-16 14:24:22,311 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2023-11-16 14:24:22,311 INFO o.a.j.JMeter: JMeterHome=/Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3
+2023-11-16 14:24:22,311 INFO o.a.j.JMeter: user.dir  =/Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/bin
+2023-11-16 14:24:22,311 INFO o.a.j.JMeter: PWD       =/Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/bin
+2023-11-16 14:24:22,318 INFO o.a.j.JMeter: IP: 192.168.2.24 Name: qzhao-V7F36-MBP FullName: 192.168.2.24
+2023-11-16 14:24:22,642 INFO o.a.j.JMeter: Setting LAF to: laf:com.apple.laf.AquaLookAndFeel
+2023-11-16 14:24:25,038 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2023-11-16 14:24:28,594 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/caffeine-2.8.8.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/caffeine-2.8.8.jar
+2023-11-16 14:24:28,595 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/checker-qual-2.11.1.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/checker-qual-3.8.0.jar
+2023-11-16 14:24:28,595 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/checker-qual-3.8.0.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/checker-qual-2.11.1.jar
+2023-11-16 14:24:28,595 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/cmdrunner-2.3.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/cmdrunner-2.3.jar
+2023-11-16 14:24:28,595 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/error_prone_annotations-2.3.4.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/error_prone_annotations-2.4.0.jar
+2023-11-16 14:24:28,595 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/error_prone_annotations-2.4.0.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/error_prone_annotations-2.3.4.jar
+2023-11-16 14:24:28,596 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/jackson-annotations-2.13.3.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/jackson-annotations-2.10.5.jar
+2023-11-16 14:24:28,596 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/jackson-core-2.13.3.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/jackson-core-2.10.5.jar
+2023-11-16 14:24:28,596 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/jackson-databind-2.13.3.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/jackson-databind-2.10.5.jar
+2023-11-16 14:24:28,596 WARN o.j.r.PluginManager: Found JAR conflict: /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/ext/slf4j-api-1.7.30.jar and /Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/lib/slf4j-api-1.7.30.jar
+2023-11-16 14:24:28,629 INFO o.j.r.JARSourceHTTP: Requesting https://jmeter-plugins.org/repo/?installID=mac_os_x-b5186b1344c73ca6fece040a156888fe-gui
+2023-11-16 14:24:30,475 INFO o.j.r.PluginManager: Plugins Status: [jpgc-graphs-additional=2.0, jpgc-autostop=0.2, jpgc-cmd=2.2, jpgc-filterresults=2.2, jpgc-perfmon=2.1, jpgc-plugins-manager=1.9, jpgc-synthesis=2.2, jpgc-tst=2.6, websocket-sampler=1.0.2-SNAPSHOT, websocket-samplers=1.2.8, jmeter-core=5.4.3, jmeter-ftp=5.4.3, jmeter-http=5.4.3, jmeter-jdbc=5.4.3, jmeter-jms=5.4.3, jmeter-junit=5.4.3, jmeter-java=5.4.3, jmeter-ldap=5.4.3, jmeter-mail=5.4.3, jmeter-mongodb=5.4.3, jmeter-native=5.4.3, jmeter-tcp=5.4.3, jmeter-components=5.4.3]
+2023-11-16 14:24:30,488 INFO o.j.r.PluginManagerMenuItem: Plugins Manager has upgrades: [jpgc-plugins-manager, websocket-samplers]
+2023-11-16 14:24:31,308 WARN o.a.j.g.ObjectTableModel: Header count=13 but classes count=11
+2023-11-16 14:24:31,310 WARN o.a.j.g.ObjectTableModel: Header count=13 but writeFunctor count=11
+2023-11-16 14:24:40,669 INFO o.a.j.s.FileServer: Default base='/Users/qzhao/Documents/performance_public/apache-jmeter-5.4.3/bin'
+2023-11-16 14:24:40,673 INFO o.a.j.g.a.Load: Loading file: /Users/qzhao/Documents/performance_public/jmx_file/AMM_payment_accountInfo_IOUIOUMultiplePathandStep_mixLoad_monitoring_test.jmx
+2023-11-16 14:24:40,674 INFO o.a.j.s.FileServer: Set new base='/Users/qzhao/Documents/performance_public/jmx_file'
+2023-11-16 14:24:40,821 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2023-11-16 14:24:40,989 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2023-11-16 14:24:40,991 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2023-11-16 14:24:40,995 INFO o.a.j.s.SaveService: Loading file: /Users/qzhao/Documents/performance_public/jmx_file/AMM_payment_accountInfo_IOUIOUMultiplePathandStep_mixLoad_monitoring_test.jmx
+2023-11-16 14:24:41,286 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-11-16 14:24:41,287 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-11-16 14:24:41,287 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-11-16 14:24:41,287 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2023-11-16 14:24:41,287 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2023-11-16 14:24:41,287 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2023-11-16 14:24:41,522 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2023-11-16 14:24:41,522 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2023-11-16 14:24:41,522 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2023-11-16 14:24:41,522 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2023-11-16 14:24:42,453 INFO o.a.j.s.FileServer: Set new base='/Users/qzhao/Documents/performance_public/jmx_file'
+2023-11-16 14:24:45,382 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:24:45,401 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:24:45,401 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:24:45,403 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2023-11-16 14:24:45,403 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2023-11-16 14:24:45,495 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:24:45,723 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:24:45,725 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:24:45,726 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:24:45,728 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:24:45,788 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:24:45,789 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:24:45,797 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:24:45,820 INFO o.a.j.s.FileServer: Stored: ../../resources/lp.csv
+2023-11-16 14:24:45,840 INFO o.a.j.s.FileServer: Stored: ../../resources/IOU_owner.csv
+2023-11-16 14:24:45,841 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:24:45,900 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:24:45,902 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:24:45,902 INFO o.a.j.s.FileServer: Stored: ../../resources/1path1step.csv
+2023-11-16 14:24:45,914 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = qzhao-V7F36-MBP
+2023-11-16 14:24:45,921 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2023-11-16 14:24:47,053 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:24:47,054 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:24:47,058 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:24:47,058 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:24:47,064 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:24:47,064 INFO o.a.j.s.FileServer: Close: ../../resources/IOU_owner.csv
+2023-11-16 14:24:47,065 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:24:47,065 INFO o.a.j.s.FileServer: Close: ../../resources/1path1step.csv
+2023-11-16 14:24:47,066 INFO o.a.j.s.FileServer: Close: ../../resources/lp.csv
+2023-11-16 14:24:47,070 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:25:04,722 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:25:04,727 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:25:04,742 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:25:05,014 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:25:05,017 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:25:05,017 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:25:05,018 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:25:05,062 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:25:05,063 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:25:05,075 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:25:05,079 INFO o.a.j.s.FileServer: Stored: ../../resources/lp.csv
+2023-11-16 14:25:05,091 INFO o.a.j.s.FileServer: Stored: ../../resources/IOU_owner.csv
+2023-11-16 14:25:05,094 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:25:05,097 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:05,099 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:05,100 INFO o.a.j.s.FileServer: Stored: ../../resources/1path1step.csv
+2023-11-16 14:25:05,536 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2023-11-16 14:25:05,538 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2023-11-16 14:25:05,851 INFO o.a.j.s.FileServer: Stored: ../../resources/6path8step.csv
+2023-11-16 14:25:08,139 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:25:08,140 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:25:08,144 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:25:08,144 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:25:08,145 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:08,147 INFO o.a.j.s.FileServer: Close: ../../resources/6path8step.csv
+2023-11-16 14:25:08,148 INFO o.a.j.s.FileServer: Close: ../../resources/IOU_owner.csv
+2023-11-16 14:25:08,148 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:08,149 INFO o.a.j.s.FileServer: Close: ../../resources/1path1step.csv
+2023-11-16 14:25:08,149 INFO o.a.j.s.FileServer: Close: ../../resources/lp.csv
+2023-11-16 14:25:08,152 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:25:15,069 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:25:15,072 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:25:15,079 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:25:15,250 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:25:15,253 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:25:15,255 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:25:15,260 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:25:15,309 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:25:15,311 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:25:15,312 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:25:15,318 INFO o.a.j.s.FileServer: Stored: ../../resources/lp.csv
+2023-11-16 14:25:15,326 INFO o.a.j.s.FileServer: Stored: ../../resources/IOU_owner.csv
+2023-11-16 14:25:15,327 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:25:15,329 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:15,330 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:15,330 INFO o.a.j.s.FileServer: Stored: ../../resources/1path1step.csv
+2023-11-16 14:25:16,186 INFO o.a.j.s.FileServer: Stored: ../../resources/6path8step.csv
+2023-11-16 14:25:21,131 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:25:21,133 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:25:21,135 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:25:21,135 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:25:21,136 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:21,137 INFO o.a.j.s.FileServer: Close: ../../resources/6path8step.csv
+2023-11-16 14:25:21,137 INFO o.a.j.s.FileServer: Close: ../../resources/IOU_owner.csv
+2023-11-16 14:25:21,138 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:21,139 INFO o.a.j.s.FileServer: Close: ../../resources/1path1step.csv
+2023-11-16 14:25:21,142 INFO o.a.j.s.FileServer: Close: ../../resources/lp.csv
+2023-11-16 14:25:21,146 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:25:38,821 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:25:38,835 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:25:38,868 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:25:39,092 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:25:39,107 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:25:39,107 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:25:39,109 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:25:39,144 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:25:39,147 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:25:39,150 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:25:39,159 INFO o.a.j.s.FileServer: Stored: ../../resources/lp.csv
+2023-11-16 14:25:39,178 INFO o.a.j.s.FileServer: Stored: ../../resources/IOU_owner.csv
+2023-11-16 14:25:39,179 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:25:39,183 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:39,184 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:39,184 INFO o.a.j.s.FileServer: Stored: ../../resources/1path1step.csv
+2023-11-16 14:25:39,885 INFO o.a.j.s.FileServer: Stored: ../../resources/6path8step.csv
+2023-11-16 14:25:40,671 INFO o.a.j.s.FileServer: Stored: ../../resources/3path3step.csv
+2023-11-16 14:25:42,554 INFO o.a.j.g.a.Start: Stopping test
+2023-11-16 14:25:42,606 INFO o.a.j.t.JMeterThread: Stopping: Payment 1-1
+2023-11-16 14:25:42,609 WARN o.a.j.t.JMeterThread: Interrupting: Payment 1-1 sampler: Account_info for issuer 1 Path 1 Step
+2023-11-16 14:25:42,620 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:25:42,623 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:25:42,623 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:25:42,624 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:25:42,624 INFO o.a.j.s.FileServer: Close: ../../resources/6path8step.csv
+2023-11-16 14:25:42,624 INFO o.a.j.s.FileServer: Close: ../../resources/IOU_owner.csv
+2023-11-16 14:25:42,625 INFO o.a.j.s.FileServer: Close: ../../resources/3path3step.csv
+2023-11-16 14:25:42,625 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:25:42,625 INFO o.a.j.s.FileServer: Close: ../../resources/1path1step.csv
+2023-11-16 14:25:42,625 INFO o.a.j.s.FileServer: Close: ../../resources/lp.csv
+2023-11-16 14:25:42,660 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:43:36,453 INFO o.a.j.g.a.Load: Loading file: /Users/qzhao/Documents/performance_public/jmx_file/AMM_payment_accountInfo_XRPXRP1Path1Step_monitoring_test.jmx
+2023-11-16 14:43:36,456 INFO o.a.j.s.FileServer: Set new base='/Users/qzhao/Documents/performance_public/jmx_file'
+2023-11-16 14:43:36,456 INFO o.a.j.s.SaveService: Loading file: /Users/qzhao/Documents/performance_public/jmx_file/AMM_payment_accountInfo_XRPXRP1Path1Step_monitoring_test.jmx
+2023-11-16 14:43:37,682 INFO o.a.j.s.FileServer: Set new base='/Users/qzhao/Documents/performance_public/jmx_file'
+2023-11-16 14:47:12,100 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:47:12,104 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:47:12,825 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:47:13,291 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:47:13,330 INFO o.a.j.e.StandardJMeterEngine: Starting 0 threads for group Payment.
+2023-11-16 14:47:13,332 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:47:13,336 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=0 ramp-up=0 delayedStart=false
+2023-11-16 14:47:13,338 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:47:13,339 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 2 : Ledger Monitoring
+2023-11-16 14:47:13,340 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Ledger Monitoring.
+2023-11-16 14:47:13,340 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:47:13,342 INFO o.a.j.t.ThreadGroup: Starting thread group... number=2 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:47:13,411 INFO o.a.j.t.ThreadGroup: Started thread group number 2
+2023-11-16 14:47:13,413 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:47:13,417 INFO o.a.j.t.JMeterThread: Thread started: Ledger Monitoring 2-1
+2023-11-16 14:47:13,433 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:47:14,871 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468290: 0
+2023-11-16 14:47:14,871 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.231 seconds
+2023-11-16 14:47:15,540 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468290: 0
+2023-11-16 14:47:15,541 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.925 seconds
+2023-11-16 14:47:16,166 WARN o.a.j.u.BeanShellTestElement: The duration to validate this ledger 81468291 is 2.547
+2023-11-16 14:47:16,167 WARN o.a.j.u.BeanShellTestElement: All trans by rippled ledger ====> 0.0
+2023-11-16 14:47:16,167 WARN o.a.j.u.BeanShellTestElement: Total trans in last validated ledger by rippled ===>> 81468291: 0.0
+2023-11-16 14:47:16,167 WARN o.a.j.u.BeanShellTestElement: Transaction Throughput for last validated ledger ===>> 81468291: 0.0
+2023-11-16 14:47:16,168 WARN o.a.j.u.BeanShellTestElement: ledger count is 2
+2023-11-16 14:47:16,280 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468291: 0
+2023-11-16 14:47:16,281 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.113 seconds
+2023-11-16 14:47:16,899 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468291: 0
+2023-11-16 14:47:16,900 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.736 seconds
+2023-11-16 14:47:17,510 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468291: 0
+2023-11-16 14:47:17,510 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.343 seconds
+2023-11-16 14:47:18,107 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468291: 0
+2023-11-16 14:47:18,107 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.947 seconds
+2023-11-16 14:47:18,707 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468291: 0
+2023-11-16 14:47:18,707 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 2.545 seconds
+2023-11-16 14:47:19,303 WARN o.a.j.u.BeanShellTestElement: The duration to validate this ledger 81468292 is 3.145
+2023-11-16 14:47:19,303 WARN o.a.j.u.BeanShellTestElement: All trans by rippled ledger ====> 0.0
+2023-11-16 14:47:19,303 WARN o.a.j.u.BeanShellTestElement: Total trans in last validated ledger by rippled ===>> 81468292: 0.0
+2023-11-16 14:47:19,304 WARN o.a.j.u.BeanShellTestElement: Transaction Throughput for last validated ledger ===>> 81468292: 0.0
+2023-11-16 14:47:19,304 WARN o.a.j.u.BeanShellTestElement: ledger count is 3
+2023-11-16 14:47:19,385 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468292: 0
+2023-11-16 14:47:19,385 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.082 seconds
+2023-11-16 14:47:19,980 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468292: 0
+2023-11-16 14:47:19,980 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.679 seconds
+2023-11-16 14:47:20,579 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468292: 0
+2023-11-16 14:47:20,580 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.271 seconds
+2023-11-16 14:47:21,168 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468292: 0
+2023-11-16 14:47:21,168 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.865 seconds
+2023-11-16 14:47:21,765 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468292: 0
+2023-11-16 14:47:21,766 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 2.464 seconds
+2023-11-16 14:47:22,362 WARN o.a.j.u.BeanShellTestElement: The duration to validate this ledger 81468293 is 3.06
+2023-11-16 14:47:22,363 WARN o.a.j.u.BeanShellTestElement: All trans by rippled ledger ====> 0.0
+2023-11-16 14:47:22,364 WARN o.a.j.u.BeanShellTestElement: Total trans in last validated ledger by rippled ===>> 81468293: 0.0
+2023-11-16 14:47:22,364 WARN o.a.j.u.BeanShellTestElement: Transaction Throughput for last validated ledger ===>> 81468293: 0.0
+2023-11-16 14:47:22,364 WARN o.a.j.u.BeanShellTestElement: ledger count is 4
+2023-11-16 14:47:22,451 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468293: 0
+2023-11-16 14:47:22,452 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.09 seconds
+2023-11-16 14:47:23,037 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468293: 0
+2023-11-16 14:47:23,037 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.676 seconds
+2023-11-16 14:47:23,633 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468293: 0
+2023-11-16 14:47:23,634 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.271 seconds
+2023-11-16 14:47:24,229 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468293: 0
+2023-11-16 14:47:24,229 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.867 seconds
+2023-11-16 14:47:24,835 WARN o.a.j.u.BeanShellTestElement: The duration to validate this ledger 81468294 is 2.474
+2023-11-16 14:47:24,836 WARN o.a.j.u.BeanShellTestElement: All trans by rippled ledger ====> 0.0
+2023-11-16 14:47:24,836 WARN o.a.j.u.BeanShellTestElement: Total trans in last validated ledger by rippled ===>> 81468294: 0.0
+2023-11-16 14:47:24,836 WARN o.a.j.u.BeanShellTestElement: Transaction Throughput for last validated ledger ===>> 81468294: 0.0
+2023-11-16 14:47:24,836 WARN o.a.j.u.BeanShellTestElement: ledger count is 5
+2023-11-16 14:47:24,934 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468294: 0
+2023-11-16 14:47:24,934 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.099 seconds
+2023-11-16 14:47:25,516 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468294: 0
+2023-11-16 14:47:25,516 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.681 seconds
+2023-11-16 14:47:26,112 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468294: 0
+2023-11-16 14:47:26,113 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.277 seconds
+2023-11-16 14:47:26,723 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468294: 0
+2023-11-16 14:47:26,725 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.887 seconds
+2023-11-16 14:47:27,354 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468294: 0
+2023-11-16 14:47:27,356 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 2.514 seconds
+2023-11-16 14:47:27,977 WARN o.a.j.u.BeanShellTestElement: The duration to validate this ledger 81468295 is 3.139
+2023-11-16 14:47:27,977 WARN o.a.j.u.BeanShellTestElement: All trans by rippled ledger ====> 0.0
+2023-11-16 14:47:27,977 WARN o.a.j.u.BeanShellTestElement: Total trans in last validated ledger by rippled ===>> 81468295: 0.0
+2023-11-16 14:47:27,977 WARN o.a.j.u.BeanShellTestElement: Transaction Throughput for last validated ledger ===>> 81468295: 0.0
+2023-11-16 14:47:27,977 WARN o.a.j.u.BeanShellTestElement: ledger count is 6
+2023-11-16 14:47:28,134 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468295: 0
+2023-11-16 14:47:28,135 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.159 seconds
+2023-11-16 14:47:28,733 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468295: 0
+2023-11-16 14:47:28,733 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 0.759 seconds
+2023-11-16 14:47:29,331 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468295: 0
+2023-11-16 14:47:29,336 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.356 seconds
+2023-11-16 14:47:29,924 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468295: 0
+2023-11-16 14:47:29,924 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 1.951 seconds
+2023-11-16 14:47:30,515 WARN o.a.j.u.BeanShellTestElement: Total trans in this round of querying validated ledger by ch host ===>> 81468295: 0
+2023-11-16 14:47:30,516 WARN o.a.j.u.BeanShellTestElement: Currently elapsed since last validated ledger 2.542 seconds
+2023-11-16 14:47:30,951 INFO o.a.j.g.a.Start: Stopping test
+2023-11-16 14:47:30,980 INFO o.a.j.t.JMeterThread: Stopping: Ledger Monitoring 2-1
+2023-11-16 14:47:30,999 ERROR o.a.j.u.BeanShellInterpreter: Error invoking bsh method: eval	Sourced file: inline evaluation of: ``import java.lang.Thread;   String curLedger = vars.get("curLedger"); String last . . . '' : Method Invocation Thread.sleep
+2023-11-16 14:47:31,000 WARN o.a.j.e.BeanShellPostProcessor: Problem in BeanShell script: org.apache.jorphan.util.JMeterException: Error invoking bsh method: eval	Sourced file: inline evaluation of: ``import java.lang.Thread;   String curLedger = vars.get("curLedger"); String last . . . '' : Method Invocation Thread.sleep
+2023-11-16 14:47:31,006 INFO o.a.j.t.JMeterThread: Thread finished: Ledger Monitoring 2-1
+2023-11-16 14:47:31,008 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:47:31,009 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:47:31,036 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:47:38,852 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:47:38,862 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:47:38,870 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:47:39,117 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:47:39,140 INFO o.a.j.e.StandardJMeterEngine: Starting 0 threads for group Payment.
+2023-11-16 14:47:39,142 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:47:39,152 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=0 ramp-up=0 delayedStart=false
+2023-11-16 14:47:39,153 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:47:39,155 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:47:39,157 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:47:39,175 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:47:57,300 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:47:57,310 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:47:57,320 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:47:57,515 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:47:57,523 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:47:57,523 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:47:57,525 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:47:57,555 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:47:57,557 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:47:57,559 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:47:57,566 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:47:57,583 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:47:57,593 INFO o.a.j.s.FileServer: Stored: ${work_dir}${ch_server}
+2023-11-16 14:47:57,601 ERROR o.a.j.t.JMeterThread: Test failed!
+java.lang.IllegalArgumentException: File ${work_dir}${ch_server} must exist and be readable
+	at org.apache.jmeter.services.FileServer.createBufferedReader(FileServer.java:424) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.services.FileServer.getReader(FileServer.java:390) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.services.FileServer.getParsedLine(FileServer.java:372) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.config.CSVDataSet.iterationStart(CSVDataSet.java:179) ~[ApacheJMeter_components.jar:5.4.3]
+	at org.apache.jmeter.control.GenericController.fireIterationStart(GenericController.java:399) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.control.GenericController.fireIterEvents(GenericController.java:391) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.control.GenericController.next(GenericController.java:160) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.control.LoopController.next(LoopController.java:134) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.threads.AbstractThreadGroup.next(AbstractThreadGroup.java:91) ~[ApacheJMeter_core.jar:5.4.3]
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:254) [ApacheJMeter_core.jar:5.4.3]
+	at java.lang.Thread.run(Thread.java:750) [?:1.8.0_341]
+2023-11-16 14:47:57,617 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:47:57,620 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:47:57,620 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:47:57,622 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:47:57,625 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:48:14,353 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:48:14,361 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:48:14,369 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:48:14,625 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:48:14,637 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:48:14,640 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:48:14,643 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:48:14,693 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:48:14,694 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:48:14,701 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:48:14,710 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:48:14,719 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:48:14,720 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:48:15,154 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:48:15,161 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:48:15,165 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:48:15,165 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:48:15,167 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:48:15,168 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:48:15,172 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:49:02,535 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:49:02,542 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:49:02,551 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:49:02,770 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:49:02,779 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:49:02,779 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:49:02,780 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:49:02,799 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:49:02,799 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:49:02,802 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:49:02,808 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:49:02,825 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:49:02,826 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:49:03,246 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:49:03,248 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:49:03,250 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:49:03,250 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:49:03,251 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:49:03,252 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:49:03,257 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2023-11-16 14:49:24,751 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2023-11-16 14:49:24,757 INFO o.a.j.s.SampleEvent: List of sample_variables: [account, issuer, seqNum, ledger, transaction, transaction_matchNr, ledgerTrans, tx_throughput]
+2023-11-16 14:49:24,766 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2023-11-16 14:49:25,047 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Payment
+2023-11-16 14:49:25,075 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Payment.
+2023-11-16 14:49:25,081 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2023-11-16 14:49:25,085 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2023-11-16 14:49:25,143 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2023-11-16 14:49:25,150 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2023-11-16 14:49:25,150 INFO o.a.j.t.JMeterThread: Thread started: Payment 1-1
+2023-11-16 14:49:25,161 INFO o.a.j.s.FileServer: Stored: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:49:25,169 INFO o.a.j.s.FileServer: Stored: ../../resources/issuers_25k_1.csv
+2023-11-16 14:49:25,170 INFO o.a.j.s.FileServer: Stored: ../../resources/ch_servers.csv
+2023-11-16 14:49:25,590 INFO o.a.j.t.JMeterThread: Thread is done: Payment 1-1
+2023-11-16 14:49:25,592 INFO o.a.j.t.JMeterThread: Thread finished: Payment 1-1
+2023-11-16 14:49:25,595 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2023-11-16 14:49:25,596 INFO o.a.j.s.FileServer: Close: ../../resources/accounts_25k_Swapped_1.csv
+2023-11-16 14:49:25,597 INFO o.a.j.s.FileServer: Close: ../../resources/ch_servers.csv
+2023-11-16 14:49:25,598 INFO o.a.j.s.FileServer: Close: ../../resources/issuers_25k_1.csv
+2023-11-16 14:49:25,604 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)

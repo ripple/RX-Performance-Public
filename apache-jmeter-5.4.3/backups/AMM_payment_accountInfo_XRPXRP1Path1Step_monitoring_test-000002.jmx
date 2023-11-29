@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="Number_of_threads" elementType="Argument">
+            <stringProp name="Argument.name">Number_of_threads</stringProp>
+            <stringProp name="Argument.value">${__P(Number_of_threads,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Ramp_up_time" elementType="Argument">
+            <stringProp name="Argument.name">Ramp_up_time</stringProp>
+            <stringProp name="Argument.value">${__P(Ramp_up_time,1)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Duration" elementType="Argument">
+            <stringProp name="Argument.name">Duration</stringProp>
+            <stringProp name="Argument.value">${__P(Duration,3600)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="http_port" elementType="Argument">
+            <stringProp name="Argument.name">http_port</stringProp>
+            <stringProp name="Argument.value">${__P(port,51234)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Duration_ledger" elementType="Argument">
+            <stringProp name="Argument.name">Duration_ledger</stringProp>
+            <stringProp name="Argument.value">${__P(Duration_ledger,3660)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="resource_dir" elementType="Argument">
+            <stringProp name="Argument.name">resource_dir</stringProp>
+            <stringProp name="Argument.value">${__P(resource_dir,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Payer" elementType="Argument">
+            <stringProp name="Argument.name">Payer</stringProp>
+            <stringProp name="Argument.value">${__P(Payer,issuers_25k_1.csv)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Payee" elementType="Argument">
+            <stringProp name="Argument.name">Payee</stringProp>
+            <stringProp name="Argument.value">${__P(Payee,accounts_25k_Swapped_1.csv)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Payment" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${NUMBER_OF_THREADS}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">${RAMP_UP_TIME}</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${Duration}</stringProp>
+        <stringProp name="ThreadGroup.delay">4</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CH hosts CSV" enabled="true">
+          <stringProp name="delimiter"></stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${work_dir}${ch_server}</stringProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">ch_host</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Payer Csv" enabled="true">
+          <stringProp name="delimiter"></stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${resource_dir}${Payer}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">issuer,secret</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Payee CSV" enabled="true">
+          <stringProp name="delimiter"></stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${resource_dir}${Payee}</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">account</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Account_info for issuer" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;method&quot;: &quot;account_info&quot;, &quot;params&quot;: [{&quot;account&quot;: &quot;${issuer}&quot;, &quot;queue&quot;: false, &quot;signer_lists&quot;: false, &quot;strict&quot;: false}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${ch_host}</stringProp>
+          <stringProp name="HTTPSampler.port">${http_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Using this to get the sequence number of the next transaction</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Reset all variables" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">vars.putObject(&quot;validated&quot;, false);
+vars.putObject(&quot;TimeOut&quot;, false);
+vars.put(&quot;tx_latency&quot;, &quot;NEVER&quot;);
+vars.put(&quot;transaction&quot;,&quot;NO_TRANS&quot;);
+vars.put(&quot;ledger&quot;,&quot;NO_LEDGER&quot;);
+
+//log.error(&quot;Time put in to variable====&gt; &quot;+bsh.args[0]);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract sequence number" enabled="false">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">seqNum;</stringProp>
+            <stringProp name="RegexExtractor.regex">.*Sequence\&quot;:([0-9]+)\,</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">-1;</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Account_info_extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">seqNum;engineResult;engineMessage</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.account_data.Sequence;$.result.status;$.result.engine_result_message</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">-1;DEFAULT_STATUS;DEFAULT_MESSAGE</stringProp>
+            <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1737178370">.*status\&quot;:\&quot;error\&quot;.*</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">6</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Scope.variable">ERROR</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="false">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">if (!sampleResult.isSuccessful()) {
+    log.info(&quot;Response Assertion failure for user_id:&quot;+ vars.get(&quot;user_id&quot;) );
+}</stringProp>
+          </BeanShellListener>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String result = vars.get(&quot;engineResult&quot;);
+//String wantCurrency = vars.get(&quot;wantCurrency&quot;);
+//String sendMaxVal = vars.get(&quot;sendMaxVal&quot;);
+//String sendMaxCurrency = vars.get(&quot;sendMaxCurrency&quot;);
+
+log.error(result);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="false">
+            <stringProp name="FileSaver.filename"></stringProp>
+            <boolProp name="FileSaver.errorsonly">true</boolProp>
+            <boolProp name="FileSaver.successonly">false</boolProp>
+            <boolProp name="FileSaver.skipsuffix">false</boolProp>
+            <boolProp name="FileSaver.skipautonumber">false</boolProp>
+            <boolProp name="FileSaver.ignoreTC">false</boolProp>
+          </ResultSaver>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Submit TX" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;method&quot;: &quot;submit&quot;, &quot;params&quot;: [{&quot;tx_blob&quot;: &quot;${tx_blob}&quot;, &quot;fail_hard&quot;: false}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${ch_host}</stringProp>
+          <stringProp name="HTTPSampler.port">${http_port}</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Normal Signer" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import org.xrpl.xrpl4j.model.transactions.Payment;
+import org.xrpl.xrpl4j.model.transactions.Address;
+import org.xrpl.xrpl4j.model.transactions.XrpCurrencyAmount;
+
+import org.xrpl.xrpl4j.crypto.signing.SingleKeySignatureService;
+import org.xrpl.xrpl4j.crypto.KeyMetadata;
+import org.xrpl.xrpl4j.crypto.signing.SignedTransaction;
+import org.xrpl.xrpl4j.crypto.PrivateKey;
+
+import org.xrpl.xrpl4j.wallet.DefaultWalletFactory;
+import org.xrpl.xrpl4j.wallet.Wallet;
+import org.xrpl.xrpl4j.wallet.WalletFactory;
+
+import com.google.common.primitives.UnsignedLong;
+import com.google.common.primitives.UnsignedInteger;
+
+
+//Parameter Processing
+String accountAddress = vars.get(&quot;issuer&quot;);
+String secret = vars.get(&quot;secret&quot;);
+String destinationAddress = vars.get(&quot;account&quot;);
+String feeNum = &quot;12&quot;;
+String amountNum = &quot;5&quot;;
+String seqNumStr = vars.get(&quot;seqNum&quot;);
+int seqNum = Integer.parseInt(seqNumStr);
+
+int fee = Integer.parseInt(feeNum);
+int amount = Integer.parseInt(amountNum);
+
+UnsignedLong longAmount = UnsignedLong.valueOf(amount);
+
+XrpCurrencyAmount amountDrop = XrpCurrencyAmount.of(longAmount);
+
+UnsignedLong longFee = UnsignedLong.valueOf(fee);
+
+XrpCurrencyAmount feeDrop = XrpCurrencyAmount.of(longFee);
+
+
+
+//Fetch the wallet from seed
+WalletFactory walletFactory = DefaultWalletFactory.getInstance();
+Wallet testWallet = walletFactory
+.fromSeed(secret, false);
+
+//Get the private key from wallet
+PrivateKey privateKey = PrivateKey.fromBase16EncodedPrivateKey(testWallet.privateKey().get());
+
+//Create signature service
+SingleKeySignatureService signatureService = new SingleKeySignatureService(privateKey);
+
+
+//Construct the payment
+Payment payment = Payment.builder()
+.account(Address.of(accountAddress))
+.destination(Address.of(destinationAddress))
+.amount(amountDrop)
+.fee(feeDrop)
+.sequence(UnsignedInteger.valueOf(seqNum))
+.signingPublicKey(testWallet.publicKey())
+.build();
+
+//Sign the Transaction
+SignedTransaction signedPayment = signatureService.sign(KeyMetadata.EMPTY,payment);
+
+//Extract tx_blob from signed transaction
+String blob = signedPayment.signedTransactionBytes().hexValue();
+
+vars.put(&quot;tx_blob&quot;, blob);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="AMM Signer" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import org.xrpl.xrpl4j.model.transactions.Payment;
+import org.xrpl.xrpl4j.model.transactions.Address;
+import org.xrpl.xrpl4j.model.transactions.XrpCurrencyAmount;
+
+import org.xrpl.xrpl4j.crypto.signing.SingleKeySignatureService;
+import org.xrpl.xrpl4j.crypto.KeyMetadata;
+import org.xrpl.xrpl4j.crypto.signing.SignedTransaction;
+import org.xrpl.xrpl4j.crypto.PrivateKey;
+
+import org.xrpl.xrpl4j.wallet.DefaultWalletFactory;
+import org.xrpl.xrpl4j.wallet.Wallet;
+import org.xrpl.xrpl4j.wallet.WalletFactory;
+
+import com.google.common.primitives.UnsignedLong;
+import com.google.common.primitives.UnsignedInteger;
+
+
+//Parameter Processing
+String accountAddress = vars.get(&quot;issuer&quot;);
+String secret = vars.get(&quot;secret&quot;);
+String destinationAddress = vars.get(&quot;account&quot;);
+String feeNum = &quot;15&quot;;
+String amountNum = &quot;5&quot;;
+String seqNumStr = vars.get(&quot;seqNum&quot;);
+int seqNum = Integer.parseInt(seqNumStr);
+
+int fee = Integer.parseInt(feeNum);
+//int fee = Integer.parseInt(&quot;1&quot;);
+int amount = Integer.parseInt(amountNum);
+
+UnsignedLong longAmount = UnsignedLong.valueOf(amount);
+
+XrpCurrencyAmount amountDrop = XrpCurrencyAmount.of(longAmount);
+
+UnsignedLong longFee = UnsignedLong.valueOf(fee);
+
+XrpCurrencyAmount feeDrop = XrpCurrencyAmount.of(longFee);
+
+
+
+//Fetch the wallet from seed
+WalletFactory walletFactory = DefaultWalletFactory.getInstance();
+Wallet testWallet = walletFactory
+.fromSeed(secret, false);
+
+//Get the private key from wallet
+PrivateKey privateKey = PrivateKey.fromBase16EncodedPrivateKey(testWallet.privateKey().get());
+
+//Create signature service
+SingleKeySignatureService signatureService = new SingleKeySignatureService(privateKey);
+
+
+//Construct the payment
+Payment payment = Payment.builder()
+.account(Address.of(accountAddress))
+.destination(Address.of(destinationAddress))
+.amount(amountDrop)
+.fee(feeDrop)
+.sequence(UnsignedInteger.valueOf(seqNum))
+.signingPublicKey(testWallet.publicKey())
+.build();
+
+//Sign the Transaction
+SignedTransaction signedPayment = signatureService.sign(KeyMetadata.EMPTY,payment);
+
+//Extract tx_blob from signed transaction
+String blob = signedPayment.signedTransactionBytes().hexValue();
+
+vars.put(&quot;tx_blob&quot;, blob);</stringProp>
+          </BeanShellPreProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="reset all variables" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${__time(/1000,)}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">//log.error(&quot;startTime ====&gt;&quot; +bsh.args[0]);
+startTime=bsh.args[0];
+
+vars.put(&quot;startTime&quot;, startTime);
+
+
+//log.error(&quot;Time put in to variable====&gt; &quot;+startTime);</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="268865741">\&quot;engine_result\&quot;:\&quot;tesSUCCESS\&quot;</stringProp>
+              <stringProp name="481145767">\&quot;engine_result\&quot;:\&quot;tefPAST_SEQ\&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">34</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Scope.variable">ERROR</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Submit Response Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">engineResult;engineCode;engineMessage;tx_hash</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.engine_result;$.result.engine_result_code;$.result.engine_result_message;$.result.tx_json.hash</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">DEFAULT_STATUS;-1;THIS_IS_A_DEFAULT_MESSAGE;DEFAULT_HASH</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion only success" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="268865741">\&quot;engine_result\&quot;:\&quot;tesSUCCESS\&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+            <stringProp name="Scope.variable">ERROR</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="false">
+            <stringProp name="FileSaver.filename">failure_payment_results/TestFile</stringProp>
+            <boolProp name="FileSaver.errorsonly">true</boolProp>
+            <boolProp name="FileSaver.successonly">false</boolProp>
+            <boolProp name="FileSaver.skipsuffix">true</boolProp>
+            <boolProp name="FileSaver.skipautonumber">false</boolProp>
+          </ResultSaver>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extract tranaction hash" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">transaction</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.tx_json.hash</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            <stringProp name="JSONPostProcessor.defaultValues">FAILED</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="false">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import org.apache.jmeter.samplers.SampleResult;
+
+SampleResult result = ctx.getPreviousResult();
+
+if (result != null &amp;&amp; (!result.getResponseDataAsString().equals(&quot;testSUCCESS&quot;) || !result.getResponseDataAsString().equals(&quot;tefPAST_SEQ&quot;))) {
+
+    // Specify your file path
+    String filePath = &quot;/Users/qzhao/Documents/Jmeter/myerror.txt&quot;;
+
+    // Getting the necessary details
+    String requestData = result.getSamplerData();
+    String responseData = result.getResponseDataAsString();
+    String responseCode = result.getResponseCode();
+    String responseMessage = result.getResponseMessage();
+    
+    // Formatting the output
+    String output = &quot;Request Data:\n&quot; + requestData 
+        + &quot;\n\nResponse Code: &quot; + responseCode
+        + &quot;\nResponse Message: &quot; + responseMessage
+        + &quot;\n\nResponse Data:\n&quot; + responseData
+        + &quot;\n--------------------------------------------------------\n&quot;;
+
+    // Writing to the file
+    try {
+        f = new FileOutputStream(filePath, true);
+        p = new PrintStream(f); 
+        p.print(output);
+        p.close();
+        f.close();
+    } catch(Exception e) {
+        log.error(&quot;Writing to file failed&quot;, e);
+    }
+}
+</stringProp>
+          </BeanShellListener>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Ledger Monitoring" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">${Duration_ledger}</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CH hosts CSV" enabled="true">
+          <stringProp name="delimiter"></stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${resource_dir}ch_servers.csv</stringProp>
+          <boolProp name="quotedData">true</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">ch_host</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+        </CSVDataSet>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="totalTrans" elementType="Argument">
+              <stringProp name="Argument.name">totalTrans</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="lastLedgerTime" elementType="Argument">
+              <stringProp name="Argument.name">lastLedgerTime</stringProp>
+              <stringProp name="Argument.value">${__time(/1000,)} </stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ledgerElapsed" elementType="Argument">
+              <stringProp name="Argument.name">ledgerElapsed</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="curLedger" elementType="Argument">
+              <stringProp name="Argument.name">curLedger</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="lastLedger" elementType="Argument">
+              <stringProp name="Argument.name">lastLedger</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="overValidationCount" elementType="Argument">
+              <stringProp name="Argument.name">overValidationCount</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="curLedgerTime" elementType="Argument">
+              <stringProp name="Argument.name">curLedgerTime</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="ledgerCount" elementType="Argument">
+              <stringProp name="Argument.name">ledgerCount</stringProp>
+              <stringProp name="Argument.value">0</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get the current first validated base ledger" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;method&quot;: &quot;ledger&quot;,&#xd;
+    &quot;params&quot;: [&#xd;
+        {&#xd;
+            &quot;ledger_index&quot;: &quot;validated&quot;,&#xd;
+            &quot;accounts&quot;: false,&#xd;
+            &quot;full&quot;: false,&#xd;
+            &quot;transactions&quot;: false,&#xd;
+            &quot;expand&quot;: false,&#xd;
+            &quot;owner_funds&quot;: false&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${ch_host}</stringProp>
+            <stringProp name="HTTPSampler.port">${http_port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extracting ledger index" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">lastLedger</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.ledger_index</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1737178370">.*status\&quot;:\&quot;error\&quot;.*</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">5</intProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+              <stringProp name="Scope.variable">ERROR</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="reset lastLedgerTime" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters">${__time()} ${__time(/1000,)}</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.lang.Thread;
+
+String startTimeSeconds=bsh.args[1];
+String startTime=bsh.args[0];
+
+vars.put(&quot;lastLedgerTime&quot;, startTime);
+
+vars.put(&quot;ledgerCount&quot;, &quot;1&quot;);
+
+//System.out.println(&quot;ms is &quot; + startTime);
+//System.out.println(&quot;second is &quot; + startTimeSeconds);
+
+
+Thread.sleep(1000); // pauses for 1 sec. after request</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="while current validated ledger is smaller than the last validated ledger" enabled="true">
+          <stringProp name="WhileController.condition">${__javaScript(parseInt(vars.get(&quot;curLedger&quot;))&lt;=parseInt(vars.get(&quot;lastLedger&quot;)))}
+</stringProp>
+        </WhileController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get current validated ledger" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;method&quot;: &quot;ledger&quot;,&#xd;
+    &quot;params&quot;: [&#xd;
+        {&#xd;
+            &quot;ledger_index&quot;: &quot;validated&quot;,&#xd;
+            &quot;accounts&quot;: false,&#xd;
+            &quot;full&quot;: false,&#xd;
+            &quot;transactions&quot;: true,&#xd;
+            &quot;expand&quot;: false,&#xd;
+            &quot;owner_funds&quot;: false&#xd;
+        }&#xd;
+    ]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${ch_host}</stringProp>
+            <stringProp name="HTTPSampler.port">${http_port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path"></stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="TestPlan.comments">ledger - ch_server Get the current validated ledger with transactions</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Reset variable" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">vars.put(&quot;overValidationCount&quot;, &quot;0&quot;);
+vars.put(&quot;ledgerElapsed&quot;, String.valueOf(0));</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extracting transactions" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">transaction</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.ledger..transactions.[*]</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NOT_FOUND</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Extracting ledger" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">curLedger</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$.result.ledger_index</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NO_LEDGER</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-1737178370">.*status\&quot;:\&quot;error\&quot;.*</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">5</intProp>
+              <stringProp name="Assertion.scope">all</stringProp>
+              <stringProp name="Scope.variable">ERROR</stringProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Calculate total transactions" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters">${__groovy(vars.get(&quot;lastLedgerTime&quot;))} ${__time(/1000,)} ${__time()}</stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.lang.Thread;
+
+
+String curLedger = vars.get(&quot;curLedger&quot;);
+String lastLedger = vars.get(&quot;lastLedger&quot;);
+
+vars.put(&quot;ledger&quot;, curLedger);
+
+String oldTime = bsh.args[0];  
+String newTime = bsh.args[2];  
+
+
+Double elapsed = (Double.parseDouble(newTime) - Double.parseDouble(oldTime))/1000;
+
+//System.out.println(oldTime + &quot;   &quot; + newTime + &quot;elapsed&quot; + String.valueOf(elapsed));
+
+String overValidationCount = vars.get(&quot;overValidationCount&quot;);
+int overValidationCountInt = Integer.parseInt(overValidationCount);
+
+String curTotalMatch = vars.get(&quot;transaction_matchNr&quot;);
+String totalTrans = vars.get(&quot;totalTrans&quot;);
+
+Double curTotalMatchDouble = Double.parseDouble(curTotalMatch);    
+Double totalTransDouble = Double.parseDouble(totalTrans);
+
+Double newTotal = totalTransDouble;
+
+
+if (Integer.parseInt(curLedger) &lt;= Integer.parseInt(lastLedger)){
+
+	log.warn(&quot;Total trans in this round of querying validated ledger by ch host ===&gt;&gt; &quot;+curLedger+&quot;: &quot;+curTotalMatch);
+
+	log.warn(&quot;Currently elapsed since last validated ledger &quot; + elapsed + &quot; seconds&quot;);
+
+	if (Double.compare(elapsed, 4) &gt; 0){
+		Thread.sleep(100);
+		log.warn(&quot;I am sleeping on this 100ms interval after 4 seconds&quot;);
+	}else{
+	
+		Thread.sleep(500);
+	}
+	
+}else{
+
+	vars.put(&quot;ledgerElapsed&quot;, String.valueOf(elapsed));
+	
+//this helps reduce the floating point comparison error and some submission delay for ledger method
+
+	if	(Double.compare(elapsed, 5.1) &gt; 0){
+		log.error(&quot;it is over required validation five seconds: &quot; + String.valueOf(elapsed));
+
+		vars.put(&quot;overValidationCount&quot;, &quot;1&quot;);
+	}
+	
+	vars.put(&quot;lastLedgerTime&quot;, newTime);
+
+
+		
+	newTotal = curTotalMatchDouble + totalTransDouble;
+
+	
+	Integer lastLedgerInt = Integer.parseInt(lastLedger);
+	lastLedgerInt = lastLedgerInt +1;
+	vars.put(&quot;lastLedger&quot;, String.valueOf(lastLedgerInt));
+
+	log.warn(&quot;The duration to validate this ledger &quot; + curLedger + &quot; is &quot; + String.valueOf(elapsed));
+	log.warn(&quot;All trans by rippled ledger ====&gt; &quot;+String.valueOf(newTotal));
+	log.warn(&quot;Total trans in last validated ledger by rippled ===&gt;&gt; &quot;+curLedger+&quot;: &quot;+String.valueOf(curTotalMatchDouble));
+
+	Double tx_throughput = curTotalMatchDouble / elapsed;
+
+	vars.put(&quot;tx_throughput&quot;, String.valueOf(tx_throughput));
+	
+	log.warn(&quot;Transaction Throughput for last validated ledger ===&gt;&gt; &quot;+curLedger+&quot;: &quot;+String.valueOf(tx_throughput));
+	
+	//Reset variable after successful ledger update
+	vars.put(&quot;totalTrans&quot;, String.valueOf(newTotal));
+	vars.put(&quot;ledgerTrans&quot;, String.valueOf(curTotalMatchDouble));
+
+	String ledgerCount = vars.get(&quot;ledgerCount&quot;);
+
+	int ledgerCountInt = Integer.parseInt(ledgerCount);
+	
+	vars.put(&quot;ledgerCount&quot;, String.valueOf(ledgerCountInt+1));
+
+	log.warn(&quot;ledger count is &quot; + String.valueOf(ledgerCountInt+1));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
