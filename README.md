@@ -1,4 +1,4 @@
-# Public Performance Testing Guide for AMM/LOB/XRP Payment Transactions
+# Performance Testing Guide for AMM/LOB/XRP Payment Transactions
 
 ## Dependencies:
 
