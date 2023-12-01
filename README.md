@@ -29,10 +29,10 @@ apache-jmeter-5.4.3/bin/jmeter -n -t jmx_file/payment_IOUIOU_mixLoad.jmx -j <jme
 
 To customize the parameters, please modify the `apache-jmeter-5.4.3/bin/user.properties` file with the following settings:
 
-- **Number_of_threads**: Number of virtual users for testing.
+- **Number_of_threads**: Number of concurrent threads for testing.
 - **Ramp_up_time**: Duration to gradually increase the number of active threads.
-- **Duration**: Total test duration.
-- **Duration_ledger**: Duration for ledger monitoring.
+- **Duration**: Total test duration in seconds.
+- **Duration_ledger**: Duration in seconds for ledger monitoring.
 - **Payer**: Path to your payers file.
 - **Payee**: Path to your payee file.
 - **resource_dir**: Directory where the CSV files are located, relative to your command running directory.
@@ -42,11 +42,19 @@ To customize the parameters, please modify the `apache-jmeter-5.4.3/bin/user.pro
 - **`IOU_owner.csv`**: The issuer of the trustline for IOU currency.
 - **`lp.csv`**: The liquidity provider for the orderbook or AMM object.
 
-*Note: For optimal testing results, it is advised to establish a synthetic database populated with IOU tokens for AMM testing. The provided JMX scripts are designed based on a simplified topology where IOU tokens are assumed to be held by a single account, and the AMM liquidity is managed by another distinct account.*
+*Note: For optimal testing results, it is advised to establish a synthetic database populated with IOU tokens for AMM testing. The provided JMX scripts are designed based on a simplified topology where IOU tokens are assumed to be held by a single account, and the AMM liquidity is managed by another distinct account. (For detailed test setup, please visit: https://engineering.ripple.com/amm-performance-testing-report/ *
 
 ## Ledger Monitoring
 
 Each JMX file includes a ledger monitoring script. During performance testing, this script will collect information for each validated ledger. The details are then recorded in the `jmeter.log` file as specified by you. This monitoring process will be active and running concurrently with the performance tests, ensuring comprehensive data collection and analysis throughout the testing period.
+
+## Report Generation
+
+Run the following command to generate a HTML based test report from the test result file you've specified (`jmeter.csv`) during test startup:
+
+```shell
+apache-jmeter-5.4.3/bin/jmeter -g <jmeter.csv> -o <jmeter_report_dir_name>
+```
 
 ## Further Reading
 
