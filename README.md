@@ -42,7 +42,7 @@ To customize the parameters, please modify the `apache-jmeter-5.4.3/bin/user.pro
 - **`IOU_owner.csv`**: The issuer of the trustline for IOU currency.
 - **`lp.csv`**: The liquidity provider for the orderbook or AMM object.
 
-*Note: For optimal testing results, it is advised to establish a synthetic database populated with IOU tokens for AMM testing. The provided JMX scripts are designed based on a simplified topology where IOU tokens are assumed to be held by a single account, and the AMM liquidity is managed by another distinct account. (For detailed test setup, please visit: https://engineering.ripple.com/amm-performance-testing-report/ *
+*Note: For optimal testing results, it is advised to establish a synthetic database populated with IOU tokens for AMM testing. The provided JMX scripts are designed based on a simplified topology where IOU tokens are assumed to be held by a single account, and the AMM liquidity is managed by another distinct account. (For detailed test setup, please visit: https://engineering.ripple.com/amm-performance-testing-report/ ) *
 
 ## Ledger Monitoring
 
