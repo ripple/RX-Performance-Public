@@ -50,7 +50,7 @@ Each JMX file includes a ledger monitoring script. During performance testing, t
 
 ## Report Generation
 
-Run the following command to generate a HTML based test report from the test result file you've specified (`jmeter.csv`) during test startup:
+Run the following command to generate a HTML based test report from the test result file you've specified (`jmeter.csv`) during the test startup:
 
 ```shell
 apache-jmeter-5.4.3/bin/jmeter -g <jmeter.csv> -o <jmeter_report_dir_name>
